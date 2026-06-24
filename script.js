@@ -1,6 +1,12 @@
+// if no setNumber added in LocalStorage then return [] array, if have then return ["A1", "D5"]
+let bookedSeats = getSeats();
+
+// Array for seats row
 const rows = ["A", "B", "C", "D"];
 
+// Seat Cotainer, whare set will be added
 const seatContainer = document.getElementById("seat-container");
+
 const form = document.getElementById("booking-form");
 const formInput = document.getElementById("seat-input");
 
@@ -38,7 +44,7 @@ rows.forEach((rowName) => {
 	seatContainer.appendChild(row);
 });
 
-// Get form input value
+// Get form input value & Update booked seats
 form.addEventListener("submit", (e) => {
 	// Prevent form reload
 	e.preventDefault();
@@ -64,10 +70,25 @@ form.addEventListener("submit", (e) => {
 	// If no condition matched then do it
 	selectedSeat.classList.add("booked");
 
+	// If set booked then save the setNumber in array
+	bookedSeats.push(seatNumber);
+
+	// Save the setNumber array in LocalStorage
+	saveSeats(bookedSeats);
+
 	// Update Booked Stats Value
 	updateSeatsNumber();
 });
 
+// If have booked seats then set the booked seat style
+bookedSeats.forEach((setNumber) => {
+	const seat = document.getElementById(setNumber);
+	if (seat) {
+		seat.classList.add("booked");
+	}
+});
+
+// Update Stats Seats Number
 function updateSeatsNumber() {
 	// Total Seats Numbers
 	const totalSeats = document.querySelectorAll(".seat").length;
