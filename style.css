@@ -1,0 +1,238 @@
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+/*===============Body Styel=============*/
+body {
+	background-color: #0f172a;
+	color: white;
+	min-height: 100vh;
+	padding: 20px;
+}
+
+/*==============Header Style===================*/
+.header {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.header h1 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+}
+
+.header p {
+	color: #cbd5e1;
+}
+
+/*===================Theater====================*/
+.theater {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.screen {
+	background: white;
+	color: black;
+	text-align: center;
+	padding: 15px;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+
+/*================Available and booked indicator============*/
+.seat-legend {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin-bottom: 30px;
+}
+
+.legend-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.available-box,
+.booked-box {
+	width: 20px;
+	height: 20px;
+	border-radius: 4px;
+}
+
+.available-box {
+	background: #22c55e;
+}
+
+.booked-box {
+	background: #ef4444;
+}
+
+/* ============Seat Container Styles ================*/
+.seat-container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 10px;
+}
+
+/* Row */
+.row {
+	display: grid;
+	grid-template-columns: repeat(25, 1fr);
+	gap: 5px;
+}
+
+/* Available Seat Style */
+.seat {
+	min-width: 50px;
+	height: 50px;
+	border: none;
+	border-radius: 5px;
+	background: #22c55e;
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+/* Booked Steat Style */
+.seat.booked {
+	background: #ef4444;
+	cursor: not-allowed;
+}
+
+/* Booking Section */
+.booking-section {
+	max-width: 700px;
+	margin: 50px auto;
+	background: #1e293b;
+	padding: 25px;
+	border-radius: 12px;
+}
+
+.booking-section h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/* Input Field Form */
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	font-weight: 600;
+}
+
+.form-group input {
+	padding: 12px;
+	border: 1px solid #475569;
+	border-radius: 10px;
+	background: #0f172a;
+	color: white;
+	outline: none;
+}
+
+.form-group input:focus {
+	border-color: #3b82f6;
+}
+
+/* Book Seat Button */
+button[type="submit"] {
+	width: 100%;
+	padding: 14px;
+	border: none;
+	border-radius: 10px;
+	background: #7c3aed;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+button[type="submit"]:hover {
+	background: #6d28d9;
+}
+
+/* Stats */
+.stats-section {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.stat-card {
+	background: #1e293b;
+	padding: 25px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.stat-card h3 {
+	margin-bottom: 10px;
+	color: #cbd5e1;
+}
+
+/* Total Seats */
+.stat-card p {
+	font-size: 2rem;
+	font-weight: bold;
+	color: #cbd5e1;
+}
+
+/* Total Available Seats */
+.stat-card #available-seats {
+	color: #22c55e;
+}
+
+/* Total Booked Seats */
+.stat-card #booked-seats {
+	color: #ef4444;
+}
+
+/* Responsive Design for Tablet (Broad Range) */
+@media (max-width: 992px) {
+	.row {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 5px;
+	}
+}
+
+/* Responsive Design for Mobile / Small Screens */
+@media (max-width: 768px) {
+	.header h1 {
+		font-size: 2rem;
+	}
+
+	.stats-section {
+		grid-template-columns: 1fr;
+	}
+
+	.seat {
+		min-width: 40px;
+		height: 40px;
+	}
+
+	/* Ekhon 768px er niche gele 5 column thikmoto kaj korbe */
+	.row {
+		grid-template-columns: repeat(5, 1fr);
+		gap: 5px;
+	}
+
+	.seat-container {
+		gap: 20px;
+	}
+}

@@ -4,7 +4,17 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Theater Seat Booking System</title>
+
+		<!-- CSS External Link -->
 		<link rel="stylesheet" href="style.css" />
+
+		<!-- Google Inter Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 
 	<body>
@@ -14,11 +24,13 @@
 		</header>
 
 		<main>
+			<!-- Header Screen & Seats -->
 			<section class="theater">
 				<div class="screen">
 					<h2>SCREEN</h2>
 				</div>
 
+				<!-- Available and booked indicator -->
 				<div class="seat-legend">
 					<div class="legend-item">
 						<span class="available-box"></span>
@@ -34,18 +46,19 @@
 				<div id="seat-container" class="seat-container"></div>
 			</section>
 
+			<!-- Input Field & Book Seat Button -->
 			<section class="booking-section">
 				<h2>Book Your Seat</h2>
 
+				<!-- Input Form & Button -->
 				<form id="booking-form">
 					<div class="form-group">
-						<label for="seat-input"> Seat Number </label>
+						<label for="seat-input">Seat Number</label>
 
 						<input
 							type="text"
 							id="seat-input"
 							placeholder="Enter seat number (e.g. A1, B12)"
-							autocomplete="off"
 						/>
 					</div>
 
@@ -53,15 +66,16 @@
 				</form>
 			</section>
 
+			<!-- Stats -->
 			<section class="stats-section">
 				<div class="stat-card">
 					<h3>Total Seats</h3>
-					<p id="total-seats">100</p>
+					<p id="total-seats">0</p>
 				</div>
 
 				<div class="stat-card">
 					<h3>Available</h3>
-					<p id="available-seats">100</p>
+					<p id="available-seats">0</p>
 				</div>
 
 				<div class="stat-card">
