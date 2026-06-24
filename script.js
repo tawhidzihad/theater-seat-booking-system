@@ -83,6 +83,9 @@ form.addEventListener("submit", (e) => {
 	// If no condition matched then do it
 	selectedSeat.classList.add("booked");
 
+	// Clear input field after seat booked
+	formInput.value = "";
+
 	// If set booked then save the setNumber in array
 	bookedSeats.push(seatNumber);
 
