@@ -21,6 +21,16 @@ const bookedSeatsEle = document.getElementById("booked-seats");
 
 // Creating dom elements
 rows.forEach((rowName) => {
+	// Seats Row and Label Container
+	const container = document.createElement("div");
+	container.classList.add("container");
+
+	// Create a lable with label name
+	const label = document.createElement("div");
+	label.classList.add("label");
+	label.textContent = `${rowName}`;
+
+	// Stets row
 	const row = document.createElement("div");
 
 	// Added row styles
@@ -41,10 +51,13 @@ rows.forEach((rowName) => {
 		row.appendChild(seat);
 	}
 
-	seatContainer.appendChild(row);
+	container.appendChild(label);
+	container.appendChild(row);
+
+	seatContainer.appendChild(container);
 });
 
-// Get form input value & Update booked seats
+// Get form input value & Update setas booked status
 form.addEventListener("submit", (e) => {
 	// Prevent form reload
 	e.preventDefault();
@@ -57,7 +70,7 @@ form.addEventListener("submit", (e) => {
 
 	// If there is no seat matched
 	if (!selectedSeat) {
-		alert("Invalid seat number");
+		alert("Seat not found");
 		return;
 	}
 
