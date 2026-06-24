@@ -25,7 +25,9 @@ A simple theater seat booking system built with HTML, CSS, and Vanilla JavaScrip
 
 ## Live Demo
 
-https://tawhidzihad.github.io/theater-seat-booking-system/
+Github: https://tawhidzihad.github.io/theater-seat-booking-system/
+
+Netlify: https://theater-seat-booking-system.netlify.app/
 
 ## Run Locally
 
